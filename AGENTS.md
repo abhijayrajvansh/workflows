@@ -3,6 +3,9 @@
 ## Project Structure & Module Organization
 Each top-level folder contains a standalone workflow exported from ComfyUI (for example, `Flux Fill FLux Redux Swap Clothes/` or `hyperlora/`). Inside, you'll find one or more `.json` graphs that define the node layout. Keep auxiliary assets (reference images, notes) alongside the workflow in the same folder and name them descriptively. Before adding a new directory, check for existing workflows that can be updated instead of duplicated.
 
+## Documentation & Catalog
+Keep the root `README.md` in sync with the workflow library. Every new or updated graph needs a one-line summary, the generation category (text-to-video, image-to-video, image editing, etc.), listed model stacks, and an NSFW flag if applicable.
+
 ## Build, Test, and Development Commands
 There is no compile step; workflows must simply be valid JSON. Run `python -m json.tool "path/to/workflow.json"` after edits to ensure syntax correctness, and use `jq` for formatting tweaks when necessary. While iterating, load the graph into ComfyUI locally and confirm that all checkpoints, LoRAs, and control assets resolve.
 
